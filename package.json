@@ -1,0 +1,80 @@
+{
+  "name": "customrpc",
+  "productName": "CustomRPC",
+  "version": "1.0.0",
+  "description": "Create CustomRPC for Discord",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "build": "electron-builder",
+    "lint": "echo \"No linting configured\""
+  },
+  "build": {
+    "appId": "CustomRPC",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "src/icons/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "displayLanguageSelector": true,
+      "createDesktopShortcut": true,
+      "installerIcon": "src/icons/icon.ico",
+      "uninstallerIcon": "src/icons/icon.ico",
+      "uninstallDisplayName": "CustomRPC Uninstaller",
+      "createStartMenuShortcut": true,
+      "license": "license.md",
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "keywords": [],
+  "author": "gokimax",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "customrpc"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "auto-launch": "^5.0.5",
+    "discord-rpc": "^4.0.1",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.64",
+    "@electron-forge/maker-deb": "^6.0.0-beta.64",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.64",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.64",
+    "@electron-forge/maker-zip": "^6.0.0-beta.64",
+    "electron": "19.0.4",
+    "electron-builder": "^23.1.0"
+  }
+}
