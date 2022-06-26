@@ -1,0 +1,506 @@
+/* =============================== Font Import =============================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* =============================== Colors =============================== */
+:root {
+  --default-title: #131313;
+  --default-background: #131313;
+
+  --txt-background: #1b1b1b;
+  --txt-background-hover: #292929;
+
+  --default-theme-color: #8131dd;
+  --default-theme-secondary: #a25bf3;
+  --default-theme-hover-color: #8131ddd5;
+  --default-font-color: #fff;
+
+  --profile-url: url("../../assets/userprofile.gif");
+}
+
+/* =============================== Themes =============================== */
+.red_theme {
+  --default-theme-color: #f12659;
+  --default-theme-secondary: #ec567c;
+  --default-theme-hover-color: #f12659d5;
+  --default-background: #131313;
+
+  --profile-url: url("../../assets/red_profile.gif");
+}
+
+.discord_theme {
+  --default-theme-color: #7289da;
+  --default-theme-secondary: #e57ce9;
+  --default-theme-hover-color: #7289dad5;
+  --default-background: #23272a;
+  --default-title: #23272a;
+
+  --profile-url: url("../../assets/discord_profile.gif");
+}
+
+.github_theme {
+  --default-theme-color: #58a6ff;
+  --default-theme-secondary: #78b0f1;
+  --default-theme-hover-color: #58a6ffd5;
+  --default-background: #0d1117;
+  --default-title: #0d1117;
+
+  --txt-background: #131820;
+  --txt-background-hover: #1b212c;
+
+  --profile-url: url("../../assets/github_profile.gif");
+}
+
+.gruvbox_theme {
+  --default-theme-color: #b06185;
+  --default-theme-secondary: #d17fa4;
+  --default-theme-hover-color: #b06185d5;
+  --default-background: #282828;
+  --default-title: #282828;
+
+  --txt-background: #3c3836;
+  --txt-background-hover: #4f4844;
+
+  --profile-url: url("../../assets/gruvbox_profile.gif");
+}
+
+/* =============================== Header =============================== */
+#header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.line {
+  background-image: linear-gradient(to right, var(--default-theme-color), var(--default-theme-secondary));
+  background-size: 100% 4px;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 2px;
+  width: 100%;
+}
+
+/* =============================== Defaults =============================== */
+.btn {
+  border-radius: 3px;
+  outline: none;
+  background-color: var(--default-theme-color);
+  border: none;
+  color: var(--default-font-color);
+  margin-bottom: 6px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--default-theme-hover-color);
+}
+
+#btnlabel {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+body {
+  overflow: hidden;
+  border-radius: 9px;
+  margin: 0;
+  padding: 0;
+  font-size: 10pt;
+  font-family: 'Poppins', sans-serif;
+  color: var(--default-font-color);
+  background-color: var(--default-background);
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* =============================== Alert =============================== */
+@keyframes slidein {
+  from {
+      left: -500px;
+  }
+  to {
+      left: 20px;
+  }
+}
+
+@keyframes slideout {
+  from {
+      left: 20px;
+  }
+  to {
+      left: -500px;
+  }
+}
+
+.alert {
+  background-color: var(--default-title);
+  width: 600px;
+  padding: 15px 10px;
+  border-radius: 8px;
+  position: absolute;
+  margin-left: 40px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 5px 5px 10px rgba(5, 5, 5, 0.582);
+  margin-top: 700px;
+}
+
+.slide-in {
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  left: 20px;
+}
+
+.slide-out {
+  animation-name: slideout;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  left: -500px;
+}
+
+/* =============================== Application =============================== */
+.mainApp {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+}
+
+.topBar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30px;
+  background-color: var(--default-title);
+  -webkit-user-select: none;
+}
+
+.topBar > .titleBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.topBar > .titleBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.titleBar  > .toggleButton {
+  width: 40px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: .2s;
+  cursor: pointer;
+  color: #fff;
+}
+
+.titleBar  > .toggleButton:hover {
+  background-color: var(--default-theme-hover-color);
+}
+
+.titleBar > .toggleButton > i {
+  text-align: center;
+  font-size: 20px;
+}
+
+.titleBar > img {
+  margin-left: 10px;
+  height: 25px;
+}
+
+.titleBar > .title {
+  width: 100%;
+  line-height: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  -webkit-app-region: drag;
+}
+
+.topBar > .titleBarBtns{
+  display: flex;
+  flex-direction: row;
+  width: 60px;
+  height: 30px;
+}
+
+.titleBarBtns > .topBtn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s;
+  cursor: pointer;
+  color: var(--default-font-color);
+}
+
+.titleBarBtns > .topBtn:hover {
+  background-color: var(--default-theme-hover-color);
+}
+
+/* =============================== Content =============================== */
+.mainApp > .contentArea {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.contentArea > .contentPages {
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  align-items: center;
+}
+
+.contentPages > .container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  margin-top: 40px;
+  display: flex;
+  
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* =============================== Checkbox =============================== */
+.checkbox {
+  display: inline-flex;
+  margin-left: 4px;
+  margin-right: auto;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.checkbox:hover {
+  cursor: pointer;
+}
+
+.checkbox_input {
+  display: none;
+}
+
+.checkbox_box::after {
+  content: '\2714';
+  color: #fff;
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+}
+
+.checkbox_input:checked + .checkbox_box {
+  background-color: var(--default-theme-color);
+}
+
+.checkbox_input:checked + .checkbox_box::after {
+  transform: scale(1);
+}
+
+.checkbox_box {
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--default-theme-color);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+  transition: all .2s ease-in-out;
+}
+
+/* =============================== Dropdown =============================== */
+.dropdown {
+  min-width: 15em;
+  position: relative;
+  margin: 10px;
+}
+
+.dropdown * {
+  box-sizing: border-box;
+}
+
+.select {
+  background-color: var(--txt-background);
+  color: var(--default-font-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.select-clicked {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.select:hover {
+  background-color: var(--txt-background-hover);
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  transition: 0.3s;
+}
+
+.caret-rotate {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 2px 5px;
+  background-color: var(--txt-background);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  color: rgb(196, 196, 196);
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -10px);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.menu li {
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.menu li:hover {
+  background-color: var(--txt-background-hover);
+}
+
+.active {
+  background-color: var(--txt-background-hover);
+}
+
+.menu-open {
+  display: block;
+  opacity: 1;
+}
+
+/* =============================== Back =============================== */
+
+.back {
+  z-index: 1000;
+  line-height: 12px;
+  width: 25px;
+  height: 25px;
+  font-size: 8pt;
+  font-family: tahoma;
+  margin-top: 1px;
+  margin-right: 2px;
+  position:absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.back i {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.719);
+
+  transition: all .3s ease-in-out;
+}
+
+.back:hover{
+  cursor: pointer;
+}
+
+.back:hover i {
+  color: var(--default-theme-color);
+}
+
+/* =============================== Settings =============================== */
+
+.settings_form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings_form .checkbox {
+  margin-left: 15px;
+}
+
+.savebtn {
+  margin-top: 15px;
+  padding: 10px;
+  cursor: pointer;
+  width: 240px;
+}
+
+/* =============================== Footer =============================== */
+
+footer {
+  transform: translateY(-85px);
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.411);
+  justify-content: center;
+
+  align-items: center;
+  text-align: center;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 10px 0 30px 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials li i {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.363);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.socials li i:hover {
+  color: var(--default-theme-color);
+
+  transition: 0.3s ease-in-out;
+}

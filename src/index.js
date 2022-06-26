@@ -2,15 +2,6 @@ const { app, BrowserWindow, ipcMain, Tray } = require('electron');
 const remoteMain = require('@electron/remote/main')
 const path = require('path');
 const ipc = ipcMain
-const AutoLaunch = require("auto-launch")
-const autoLaunch = new AutoLaunch({name: "CustomRPC | Beta"})
-
-autoLaunch.isEnabled().then(function(isEnabled) {
-  if(isEnabled)
-    return
-
-  autoLaunch.enable();
-}).catch((err) => console.error(err))
 
 remoteMain.initialize();
 
@@ -23,7 +14,7 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    title: "CustomRPC | Beta",
+    title: "CustomRPC | v1.0",
     width: 900,
     height: 850,
     resizable: false,
@@ -33,12 +24,15 @@ const createWindow = () => {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true,
-      devTools: false
-    }    
+      devTools: true,
+    },
+    hasShadow: true,
+    roundedCorners: true,
+    
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.loadFile(path.join(__dirname, 'app/index.html'));
 
   // Close The Application
   ipc.on('closeApp', () => {
@@ -47,8 +41,8 @@ const createWindow = () => {
   })
 
   tray = new Tray(path.join(__dirname, "icons/icon.png"));
-  tray.setToolTip("customRPC | Beta");
-  tray.on("click", () => {
+  tray.setToolTip("CustomRPC | v1.0");
+  tray.on("click", (e) => {
     if(!mainWindow.isVisible()) {
       mainWindow.show();
     } else {

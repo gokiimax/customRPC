@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Set Title and meta -->
+    <meta charset="UTF-8" />
+    <title>CustomRPC | v1.0</title>
+
+    <!-- Load Styles and FA CDN -->
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Load Scripts -->
+    <script defer src="../functions.js"></script>
+  </head>
+  <body class="">
+    
+    <div class="mainApp">
+
+
+      <!-- Header -->
+      <div id="header">
+        <div class="topBar">
+          <div class="titleBar">
+            <img src="../icons/icon.png">
+            <div class="title">CustomRPC</div>
+          </div>
+
+          <div class="titleBarBtns">
+            <button id="minimizeBtn" class="topBtn minimizeBtn" title="Minimize"><i class="fa-solid fa-window-minimize"></i></button>
+            <button id="closeBtn" class="topBtn closeBtn" title="Close"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+        <div class="line"></div>
+      </div>
+      
+      <!-- Content -->
+        <div class="contentArea">
+        <div class="contentPages">
+            <div class="container">
+
+              <div id="back" class="back">
+                <a href="../app/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+              </div>
+
+              <form class="settings_form">
+
+                <!-- Theme Selection -->
+                <label id="btnlabel">Themes</label>
+                <div class="dropdown">
+                  <div class="select">
+                    <span class="selected">Default</span>
+                    <div class="caret"></div>
+                  </div>
+                  <ul class="menu">
+                    <li class="active">Default</li>
+                    <li>Red</li>
+                    <li>Discord</li>
+                    <li>Github</li>
+                    <li>Gruvbox</li>
+                  </ul>
+                </div>
+
+                <label id="btnlabel">Startup</label>
+                <label class="checkbox" for="startupCheckbox">
+                  <input class="checkbox_input" type="checkbox" id="startupCheckbox">
+                  <div class="checkbox_box"></div>
+                  Enable Autostart
+                </label>
+
+                <button class="btn savebtn">Save Preferences</button>
+              </form>
+
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/change_theme.js"></script>
+    <script src="js/misc.js"></script>
+</body>
+
+<footer>
+  <ul class="socials">
+    <li id="twitter"><i class="fa-brands fa-twitter"></i></li>
+    <li id="youtube"><i class="fa-brands fa-youtube"></i></li>
+    <li id="github"><i class="fa-brands fa-github"></i></li>
+    <li id="discord"><i class="fa-brands fa-discord"></i></li>
+  </ul>
+</footer>
+
+<script src="../socials.js"></script>
+
+</html>

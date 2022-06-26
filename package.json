@@ -22,14 +22,15 @@
     },
     "nsis": {
       "oneClick": false,
-      "displayLanguageSelector": true,
+      "multiLanguageInstaller": true,
       "createDesktopShortcut": true,
-      "installerIcon": "src/icons/icon.ico",
-      "uninstallerIcon": "src/icons/icon.ico",
-      "uninstallDisplayName": "CustomRPC Uninstaller",
+      "installerIcon": "src/icons/new_icon.ico",
+      "uninstallerIcon": "src/icons/new_icon.ico",
+      "uninstallDisplayName": "CustomRPC",
       "createStartMenuShortcut": true,
       "license": "license.md",
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": "true"
     }
   },
   "keywords": [],
