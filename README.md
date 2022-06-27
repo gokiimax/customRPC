@@ -10,4 +10,4 @@ Create your own Discord RPC!
 
 ---
 ## 🖼️ Preview
-![](https://cdn.discordapp.com/attachments/965674056080826368/990595558433505331/unknown.png)
+![](images/preview.png)
