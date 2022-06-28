@@ -1,5 +1,5 @@
 const dropdowns = document.querySelectorAll('.dropdown');
-const active = document.querySelector('.selected')
+const active = document.querySelector('.active')
 
 dropdowns.forEach(dropdown => {
     var select = dropdown.querySelector('.select');
@@ -22,11 +22,13 @@ dropdowns.forEach(dropdown => {
             caret.classList.remove('caret-rotate');
             menu.classList.remove('menu-open');
 
-            options.forEach(option => {
-                option.classList.remove('active')
+            options.forEach(option1 => {
+                option1.classList.remove('active')
+                option1.classList.remove('selected')
             });
 
             option.classList.add('active')
+            option.classList.add('selected')
 
             window.localStorage.setItem("theme", option.innerText);
         });
@@ -57,9 +59,24 @@ if(window.localStorage.getItem("theme")) {
         document.body.classList.add("gruvbox_theme")
     }
 
+    if(theme === "Material Darker") {
+        document.body.className = '';
+        document.body.classList.add("material_darker")
+    }
+
+    if(theme === "Material Lighter") {
+        document.body.className = '';
+        document.body.classList.add("material_lighter")
+    }
+
+    if(theme === "Palenight") {
+        document.body.className = '';
+        document.body.classList.add("palenight")
+    }
+
     if(theme === "Default") {
         document.body.className = '';
     }
 
-    active.innerText = theme
+    active.innerHTML === theme ;
 }

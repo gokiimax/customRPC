@@ -22,6 +22,21 @@ if(window.localStorage.getItem("theme")) {
         document.body.classList.add("gruvbox_theme")
     }
 
+    if(theme === "Material Darker") {
+        document.body.className = '';
+        document.body.classList.add("material_darker")
+    }
+
+    if(theme === "Material Lighter") {
+        document.body.className = '';
+        document.body.classList.add("material_lighter")
+    }
+
+    if(theme === "Palenight") {
+        document.body.className = '';
+        document.body.classList.add("palenight")
+    }
+
     if(theme === "Default") {
         document.body.className = '';
     }

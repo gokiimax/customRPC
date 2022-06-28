@@ -63,6 +63,51 @@
   --profile-url: url("../../assets/gruvbox_profile.gif");
 }
 
+.material_darker {
+  --default-background: #212121;
+  --default-title: #212121;
+
+  --txt-background: #1b1b1b;
+  --txt-background-hover: #292929;
+
+  --default-theme-color: #FF9800;
+  --default-theme-secondary: #eea38d;
+  --default-theme-hover-color: #FF9800d5;
+  --default-font-color: #727272;
+
+  --profile-url: url("../../assets/material_darker.gif");
+}
+
+.material_lighter {
+  --default-background: #FAFAFA;
+  --default-title: #FAFAFA;
+
+  --txt-background: #eae8e8;
+  --txt-background-hover: #CCD7DA50;
+
+  --default-theme-color: #d4d1d1;
+  --default-theme-secondary: #2c8692;
+  --default-theme-hover-color: #ffffffd5;
+  --default-font-color: #343738;
+
+  --profile-url: url("../../assets/material_lighter.gif");
+}
+
+.palenight {
+  --default-background: #292D3E;
+  --default-title: #292D3E;
+
+  --txt-background: #34324a;
+  --txt-background-hover: #414863;
+
+  --default-theme-color: #ab47bc;
+  --default-theme-secondary: #d16de2;
+  --default-theme-hover-color: #ab47bcd5;
+  --default-font-color: #ffffff;
+
+  --profile-url: url("../../assets/palenight_profile.gif");
+}
+
 /* =============================== Header =============================== */
 #header {
   position: fixed;
@@ -389,6 +434,7 @@ form button:hover {
   font-weight: 700;
   font-size: 20px;
   transform: translate(20px, -30px);
+  color: #ebedf0;
 }
 
 .userPopup #discriminator {
