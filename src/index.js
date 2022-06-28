@@ -5,6 +5,8 @@ const ipc = ipcMain
 
 remoteMain.initialize();
 
+var trayEnabled = false
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 // eslint-disable-next-line global-require
 if (require('electron-squirrel-startup')) {
@@ -45,8 +47,6 @@ const createWindow = () => {
   tray.on("click", (e) => {
     if(!mainWindow.isVisible()) {
       mainWindow.show();
-    } else {
-      tray.destroy();
     }
   })
 

@@ -7,19 +7,42 @@ const buttonTwoTxtLabel = document.getElementById("btn2label")
 const buttonTwoTxtUrl = document.getElementById("btn2url")
 
 let enableButton1 = false;
-let enableButton2 = false;
+if(window.localStorage.getItem("enableBtn1")) {
+    if(window.localStorage.getItem("enableBtn1") === true) {
+        enableButton1 = true;
+    } else {
+        enableButton1 = false;
+    }
+}
+
+let enableButton2 = false
+if(window.localStorage.getItem("enableBtn2")) {
+    if(window.localStorage.getItem("enableBtn2") === true) {
+        enableButton2 = true;
+    } else {
+        enableButton2 = false;
+    }
+}
 
 var popUp_details = document.getElementById("popUp_details")
 var popUp_state = document.getElementById("popUp_state")
 
 /* Details */
 details.addEventListener('keyup', (e) => {
-    popUp_details.innerHTML = details.value;
+    if(details.value === "") {
+        popUp_details.innerHTML = "‎ ";
+    } else {
+        popUp_details.innerHTML = details.value;
+    }
 })
 
 /* State */
 state.addEventListener("keyup", (e) => {
-    popUp_state.innerHTML = state.value
+    if(state.value === "" || state.value === " ") {
+        popUp_state.innerHTML = "‎ ";
+    } else {
+        popUp_state.innerHTML = state.value;
+    }
 })
 
 /* Button One */
@@ -101,8 +124,8 @@ async function setActivity(clientId) {
         if(enableButton1) {
             options = {
                 buttons: [{label: btn1Label.value, url: btn1Url.value}],
-                details: _detail.value ? _detail.value : "Developed by",
-                state: _state.value ? _state.value : "gokimax",
+                details: _detail.value ? _detail.value : "Developed by gokimax",
+                state: _state.value ? _state.value : "‎ ",
                 startTimestamp: Date.now(),
                 largeImageKey: LargeImageKey.value ? LargeImageKey.value : "",
                 largeImageText: LargeImageText.value ? LargeImageText.value : "Developed by",
@@ -110,6 +133,8 @@ async function setActivity(clientId) {
                 smallImageText: SmallImageText.value ? SmallImageText.value : "gokimax",
                 instance: false,
             }
+
+            window.localStorage.setItem("enableBtn1", true)
 
             window.localStorage.setItem("button1label", btn1Label.value)
             window.localStorage.setItem("button1url", btn1Url.value)
@@ -124,6 +149,8 @@ async function setActivity(clientId) {
                 smallImageText: SmallImageText.value ? SmallImageText.value : "gokimax",
                 instance: false,
             }
+
+            window.localStorage.setItem("enableBtn1", false)
         }
 
         if(enableButton2) {
@@ -139,10 +166,13 @@ async function setActivity(clientId) {
                 instance: false,
             }
 
+            window.localStorage.setItem("enableBtn2", true)
             window.localStorage.setItem("button1label", btn1Label.value)
             window.localStorage.setItem("button1url", btn1Url.value)
             window.localStorage.setItem("button2label", btn2Label.value)
             window.localStorage.setItem("button2url", btn2Url.value)
+        } else {
+            window.localStorage.setItem("enableBtn2", false)
         }
 
         await client.setActivity(options).catch(err => showAlert(err), console.error)
@@ -168,6 +198,8 @@ updateBtn.addEventListener("click", async (e) => {
             window.localStorage.setItem("largeImageText", LargeImageText.value ? LargeImageText.value : "Developed by")
             window.localStorage.setItem("smallImageKey", SmallImageKey.value ? SmallImageKey.value : "")
             window.localStorage.setItem("smallImageText", SmallImageText.value ? SmallImageText.value : "gokimax")
+
+            setInterval(startTimestamp, 1000);
         } catch (err) {
             console.error(err)
         }
@@ -189,14 +221,55 @@ const showAlert = (text) => {
     }, 3000);
 };
 
-let sendNotification = (text) => {
+var sendNotification = (text) => {
     const title = "CustomRPC | Beta"
 
     const notification = new Notification(title, {
         body: text,
         requireInteraction: false,
-        icon: path.join(__dirname, "icons/icon.png"),                
     })
 }
 
-module.exports = setActivity
+var seconds = 00;
+var minutes = 00;
+var appendSeconds = document.getElementById('seconds');
+var appendMinutes = document.getElementById('minutes');
+
+function startTimestamp() {
+    seconds++;
+
+    if(seconds < 9) {
+        appendSeconds.innerHTML = "0" + seconds;
+    }
+    if(seconds > 9) {
+        appendSeconds.innerHTML = seconds;
+    }
+
+    if(seconds > 59) {
+        minutes++;
+        appendMinutes.innerHTML = "0" + minutes;
+        seconds = 0;
+        appendSeconds.innerHTML = "0" + 0;
+    }
+
+    if(minutes > 9) {
+        appendMinutes.innerHTML = minutes
+    }
+}  
+
+module.exports = setActivity, sendNotification
+
+buttonOne.addEventListener("load", (e) => {
+    if(enableButton1) {
+        e.target.checked === true;
+    } else {
+        e.target.checked === false;
+    }
+})
+buttonTwo.addEventListener("load", (e) => {
+    if(enableButton2) {
+        e.target.checked === true;
+    } else {
+        e.target.checked === false;
+    }
+})
