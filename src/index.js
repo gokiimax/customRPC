@@ -24,11 +24,10 @@ const createWindow = () => {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true,
-      devTools: true,
+      devTools: false,
     },
     hasShadow: true,
     roundedCorners: true,
-    
   });
 
   // and load the index.html of the app.
