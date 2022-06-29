@@ -140,8 +140,8 @@ async function setActivity(clientId) {
             window.localStorage.setItem("button1url", btn1Url.value)
         } else {
             options = {
-                details: _detail.value ? _detail.value : "Developed by",
-                state: _state.value ? _state.value : "gokimax",
+                details: _detail.value ? _detail.value : "Developed by gokimax",
+                state: _state.value ? _state.value : "‎",
                 startTimestamp: Date.now(),
                 largeImageKey: LargeImageKey.value ? LargeImageKey.value : "",
                 largeImageText: LargeImageText.value ? LargeImageText.value : "Developed by",
@@ -156,8 +156,8 @@ async function setActivity(clientId) {
         if(enableButton2) {
             options = {
                 buttons: [{label: btn1Label.value, url: btn1Url.value}, {label: btn2Label.value, url: btn2Url.value}],
-                details: _detail.value ? _detail.value : "Developed by",
-                state: _state.value ? _state.value : "gokimax",
+                details: _detail.value ? _detail.value : "Developed by gokimax",
+                state: _state.value ? _state.value : "‎",
                 startTimestamp: Date.now(),
                 largeImageKey: LargeImageKey.value ? LargeImageKey.value : "",
                 largeImageText: LargeImageText.value ? LargeImageText.value : "Developed by",
@@ -180,7 +180,7 @@ async function setActivity(clientId) {
         console.log("[CustomRPC] Discord Rich Presence has been enabled!")
     });
 
-    await client.login({ clientId: clientId }).then(showAlert("Successfully enabled RPC!"), sendNotification("Discord Rich Presence has been enabled!")).catch( (err) => {showAlert(err)});
+    await client.login({ clientId: clientId }).catch( (err) => {showAlert(err)});
 }
 
 updateBtn.addEventListener("click", async (e) => {
@@ -192,17 +192,21 @@ updateBtn.addEventListener("click", async (e) => {
             setActivity(clientIdValue.value);
 
             window.localStorage.setItem("clientId", clientIdValue.value)
-            window.localStorage.setItem("details", _detail.value ? _detail.value : "Developed by")
-            window.localStorage.setItem("state", _state.value ? _state.value : "gokimax")
+            window.localStorage.setItem("details", _detail.value ? _detail.value : "Developed by gokimax")
+            window.localStorage.setItem("state",_state.value ? _state.value : "‎")
             window.localStorage.setItem("largeImageKey", LargeImageKey.value ? LargeImageKey.value : "")
             window.localStorage.setItem("largeImageText", LargeImageText.value ? LargeImageText.value : "Developed by")
             window.localStorage.setItem("smallImageKey", SmallImageKey.value ? SmallImageKey.value : "")
             window.localStorage.setItem("smallImageText", SmallImageText.value ? SmallImageText.value : "gokimax")
 
+            showAlert("Successfully enabled RPC!")
+            sendNotification("Discord Rich Presence has been enabled!")
+
             setInterval(startTimestamp, 1000);
         } catch (err) {
             console.error(err)
         }
+
     }
 })
 
