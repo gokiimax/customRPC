@@ -7,11 +7,11 @@
 
     <!-- Load Styles and FA CDN -->
     <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="../themes/themes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Load Scripts -->
     <script defer src="../functions.js"></script>
-    <script defer src="js/themes.js"></script>
   </head>
   <body class="">
     
@@ -48,17 +48,17 @@
               <button id="devBtn" class="btn">Developer Portal</button>
               <div class="inputs_container" id="RPCsettings">
 
-                <input type="text" placeholder="Application Id" id="applicationId" class="txt">
+                <input type="text" placeholder="Application Id" id="applicationId" class="txt" required>
 
-                <input type="text" placeholder="Details" id="details" class="txt">
+                <input type="text" placeholder="Details" id="details" class="txt" required>
 
                 <input type="text" placeholder="State" id="state" class="txt">
 
-                <input type="text" placeholder="Large Image Key" id="largeImageKey" class="txt">
-                <input type="text" placeholder="Large Image Hover Text" id="largeImageText" class="txt">
+                <input type="text" placeholder="Large Image Key" id="largeImageKey" class="txt" required>
+                <input type="text" placeholder="Large Image Hover Text" id="largeImageText" class="txt" required>
 
-                <input type="text" placeholder="Small Image Key" id="smallImageKey" class="txt">
-                <input type="text" placeholder="Small Image Hover Text" id="smallImageText" class="txt">
+                <input type="text" placeholder="Small Image Key" id="smallImageKey" class="txt" required>
+                <input type="text" placeholder="Small Image Hover Text" id="smallImageText" class="txt" required>
 
                 <label id="btnlabel">Button One</label>
                 <label class="checkbox" for="button1Checkbox">
@@ -116,7 +116,7 @@
   <!-- Scripts -->
   <script src="js/rpc.js"></script>
   <script src="js/startup.js"></script>
-  <script src="js/themes.js"></script>
+  <script src="../themes/themes.js"></script>
 </body>
 
 <footer>

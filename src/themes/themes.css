@@ -1,0 +1,183 @@
+/* =============================== Colors =============================== */
+
+:root {
+  --default-title: #131313;
+  --default-background: #131313;
+
+  --txt-background: #1b1b1b;
+  --txt-background-hover: #292929;
+
+  --default-theme-color: #8131dd;
+  --default-theme-secondary: #a25bf3;
+  --default-theme-hover-color: #8131ddd5;
+  --default-font-color: #fff;
+
+  --profile-url: url("../../assets/userprofile.gif");
+}
+  
+/* =============================== Themes =============================== */
+
+/* =============================== Red =============================== */
+.red_theme {
+  --default-theme-color: #f12659;
+  --default-theme-secondary: #ec567c;
+  --default-theme-hover-color: #f12659d5;
+  --default-background: #131313;
+
+  --profile-url: url("../../assets/red_profile.gif");
+}
+
+/* =============================== Discord =============================== */
+.discord_theme {
+  --default-theme-color: #7289da;
+  --default-theme-secondary: #e57ce9;
+  --default-theme-hover-color: #7289dad5;
+  --default-background: #23272a;
+  --default-title: #23272a;
+
+  --profile-url: url("../../assets/discord_profile.gif");
+}
+
+/* =============================== Github =============================== */
+.github_theme {
+  --default-theme-color: #58a6ff;
+  --default-theme-secondary: #78b0f1;
+  --default-theme-hover-color: #58a6ffd5;
+  --default-background: #0d1117;
+  --default-title: #0d1117;
+
+  --txt-background: #131820;
+  --txt-background-hover: #1b212c;
+
+  --profile-url: url("../../assets/github_profile.gif");
+}
+
+/* =============================== Material Darker =============================== */
+.material_darker {
+  --default-background: #212121;
+  --default-title: #212121;
+
+  --txt-background: #1b1b1b;
+  --txt-background-hover: #292929;
+
+  --default-theme-color: #FF9800;
+  --default-theme-secondary: #eea38d;
+  --default-theme-hover-color: #FF9800d5;
+  --default-font-color: #727272;
+
+  --profile-url: url("../../assets/material_darker.gif");
+}
+
+/* =============================== Material Lighter =============================== */
+.material_lighter {
+  --default-background: #FAFAFA;
+  --default-title: #FAFAFA;
+
+  --txt-background: #eae8e8;
+  --txt-background-hover: #CCD7DA50;
+
+  --default-theme-color: #d4d1d1;
+  --default-theme-secondary: #2c8692;
+  --default-theme-hover-color: #ffffffd5;
+  --default-font-color: #343738;
+
+  --profile-url: url("../../assets/material_lighter.gif");
+}
+
+/* =============================== Palenight =============================== */
+.palenight {
+  --default-background: #292D3E;
+  --default-title: #292D3E;
+
+  --txt-background: #34324a;
+  --txt-background-hover: #414863;
+
+  --default-theme-color: #ab47bc;
+  --default-theme-secondary: #d16de2;
+  --default-theme-hover-color: #ab47bcd5;
+  --default-font-color: #ffffff;
+
+  --profile-url: url("../../assets/palenight_profile.gif");
+}
+
+/* =============================== Neon =============================== */
+.neon {
+  --default-background: #070707;
+  --default-title: #070707;
+
+  --txt-background: #0e0e0e;
+  --txt-background-hover: #131313;
+
+  --default-theme-color: #47b8bc;
+  --default-theme-secondary: #7ed8db;
+  --default-theme-hover-color: #47b8bcd5;
+
+  --profile-url: url("../../assets/neon_profile.gif");
+}
+
+.neon .line {
+  z-index: 10001;
+  box-shadow: 0px 5px 15px var(--default-theme-color);
+}
+
+.neon .btn {
+  box-shadow: 0 0 20px var(--default-theme-color);
+}
+
+.neon .settings_main:hover i {
+  text-shadow: 0 0 15px var(--default-theme-color);
+}
+
+.neon .back:hover i {
+  text-shadow: 0 0 15px var(--default-theme-color);
+}
+
+.neon .socials li i:hover {
+  text-shadow: 0 0 20px var(--default-theme-color);
+}
+
+/* =============================== Atom =============================== */
+.atom {
+  --default-background: #292d34;
+  --default-title: #292d34;
+
+  --txt-background: #333841;
+  --txt-background-hover: #404652;
+
+  --default-theme-color: #edd8b7;
+  --default-theme-secondary: #f3e3c9;
+  --default-theme-hover-color: #edd8b7d5;
+
+  --profile-url: url("../../assets/atom_profile.gif");
+}
+
+
+/* =============================== Darcula =============================== */
+.darcula {
+  --default-background: #282a36;
+  --default-title: #282a36;
+
+  --txt-background: #44475a;
+  --txt-background-hover: #505469;
+
+  --default-theme-color: #bd93f9;
+  --default-theme-secondary: #bd93f9;
+  --default-theme-hover-color: #bd93f9d5;
+
+  --profile-url: url("../../assets/dracula.svg");
+}
+
+/* =============================== Zero Two =============================== */
+.zeroTwo {
+  --default-background: #201d1d;
+  --default-title: #201d1d;
+
+  --txt-background: #353030;
+  --txt-background-hover: #494343;
+
+  --default-theme-color: #f0b2bc;
+  --default-theme-secondary: #eebcc4;
+  --default-theme-hover-color: #f0b2bcd5;
+
+  --profile-url: url("../../assets/zerotwo_profile.gif");
+}

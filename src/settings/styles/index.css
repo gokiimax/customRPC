@@ -1,107 +1,6 @@
 /* =============================== Font Import =============================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
-/* =============================== Colors =============================== */
-:root {
-  --default-title: #131313;
-  --default-background: #131313;
-
-  --txt-background: #1b1b1b;
-  --txt-background-hover: #292929;
-
-  --default-theme-color: #8131dd;
-  --default-theme-secondary: #a25bf3;
-  --default-theme-hover-color: #8131ddd5;
-  --default-font-color: #fff;
-
-  --profile-url: url("../../assets/userprofile.gif");
-}
-
-/* =============================== Themes =============================== */
-.red_theme {
-  --default-theme-color: #f12659;
-  --default-theme-secondary: #ec567c;
-  --default-theme-hover-color: #f12659d5;
-  --default-background: #131313;
-
-  --profile-url: url("../../assets/red_profile.gif");
-}
-
-.discord_theme {
-  --default-theme-color: #7289da;
-  --default-theme-secondary: #e57ce9;
-  --default-theme-hover-color: #7289dad5;
-  --default-background: #23272a;
-  --default-title: #23272a;
-
-  --profile-url: url("../../assets/discord_profile.gif");
-}
-
-.github_theme {
-  --default-theme-color: #58a6ff;
-  --default-theme-secondary: #78b0f1;
-  --default-theme-hover-color: #58a6ffd5;
-  --default-background: #0d1117;
-  --default-title: #0d1117;
-
-  --txt-background: #131820;
-  --txt-background-hover: #1b212c;
-
-  --profile-url: url("../../assets/github_profile.gif");
-}
-
-.gruvbox_theme {
-  --default-theme-color: #b06185;
-  --default-theme-secondary: #d17fa4;
-  --default-theme-hover-color: #b06185d5;
-  --default-background: #282828;
-  --default-title: #282828;
-
-  --txt-background: #3c3836;
-  --txt-background-hover: #4f4844;
-
-  --profile-url: url("../../assets/gruvbox_profile.gif");
-}
-
-.material_darker {
-  --default-background: #212121;
-  --default-title: #212121;
-
-  --txt-background: #1b1b1b;
-  --txt-background-hover: #292929;
-
-  --default-theme-color: #FF9800;
-  --default-theme-secondary: #eea38d;
-  --default-theme-hover-color: #FF9800d5;
-  --default-font-color: #727272;
-}
-
-.material_lighter {
-  --default-background: #FAFAFA;
-  --default-title: #FAFAFA;
-
-  --txt-background: #eae8e8;
-  --txt-background-hover: #CCD7DA50;
-
-  --default-theme-color: #00BCD4;
-  --default-theme-secondary: #2c8692;
-  --default-theme-hover-color: #00BCD4d5;
-  --default-font-color: #94A7B0;
-}
-
-.palenight {
-  --default-background: #292D3E;
-  --default-title: #292D3E;
-
-  --txt-background: #34324a;
-  --txt-background-hover: #414863;
-
-  --default-theme-color: #ab47bc;
-  --default-theme-secondary: #d16de2;
-  --default-theme-hover-color: #ab47bcd5;
-  --default-font-color: #ffffff;
-}
-
 /* =============================== Header =============================== */
 #header {
   position: fixed;
@@ -496,6 +395,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 400px;
 }
 
 .settings_form .checkbox {
